@@ -1,0 +1,42 @@
+# Laravel vendor & dependencies
+src/vendor/
+src/node_modules/
+
+# Environment files
+src/.env
+src/.env.backup
+src/.env.production
+
+# Laravel generated files
+src/bootstrap/cache/*.php
+src/storage/*.key
+src/storage/pail/
+src/public/build/
+src/public/hot
+src/public/storage
+
+# Laravel cache & logs
+*.log
+src/.phpunit.result.cache
+src/.phpunit.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.idea/
+.vscode/
+.fleet/
+.nova/
+.zed/
+*.swp
+*.swo
+*~
+
+# Docker
+.docker-data/
+
+# Misc
+src/auth.json
+src/.phpactor.json
