@@ -5,15 +5,16 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class BookResource extends JsonResource
+class AuthorResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
-            'description' => $this->description,
-            'authors' => AuthorResource::collection($this->whenLoaded('authors')),
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
+            'last_book_title' => $this->last_book_title,
+            'books' => BookResource::collection($this->whenLoaded('books')),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
