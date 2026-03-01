@@ -2,6 +2,10 @@
 
 REST API do zarządzania biblioteką – książki i autorzy. Zbudowane w Laravel 12.
 
+## Wymagania
+
+Docker
+
 ## Instalacja i uruchomienie
 
 ```bash
