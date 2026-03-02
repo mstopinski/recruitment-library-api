@@ -87,3 +87,47 @@ Logika biznesowa została wydzielona do klas `BookService` i `AuthorService`. Ko
 ### Dispatch UpdateAuthorLastBook przy tworzeniu, edycji i usuwaniu
 
 Job `UpdateAuthorLastBook` jest dispatchowany nie tylko przy dodawaniu książki, ale też przy edycji i usuwaniu. Kolumna `last_book_title` na modelu `Author` powinna zawsze odzwierciedlać aktualny stan. Jeśli książka zostanie usunięta lub autor zostanie odłączony, tytuł ostatniej książki musi zostać zaktualizowany aby dane były spójne.
+
+
+# Recruitment Task - Library API
+
+REST API application for library management built with Laravel framework.
+
+## Task Description
+
+Create a simple API for managing a library system with books and authors.
+
+## Requirements
+
+### 1. Data Models
+- `Book` and `Author` models with many-to-many relationship
+- One author can have multiple books
+- One book can have multiple authors
+
+### 2. API Endpoints
+
+#### Books
+- `GET /api/books` - List all books with author information
+- `GET /api/books/{id}` - Get detailed information about a specific book with authors
+- `POST /api/books` - Add a new book to the database
+- `PUT /api/books/{id}` - Update book information
+- `DELETE /api/books/{id}` - Delete a book from the database
+
+#### Authors
+- `GET /api/authors` - List all authors with their books
+- `GET /api/authors/{id}` - Get detailed information about a specific author with their books
+
+### 3. Additional Features
+- Input data validation
+- Results pagination
+- Queue job that saves the title of the last added book in the Author model column
+
+### 4. Tests
+- Unit tests for `POST /api/books`
+- Unit tests for `DELETE /api/books/{id}`
+
+## Bonus Features (Optional)
+
+- **Authentication**: Sanctum authentication for `POST /api/books` endpoint
+- **Search Filter**: `GET /api/authors?search={query}` - filter authors whose books contain the search query in their titles
+- **Artisan Command**: Create command that prompts for first and last name, then creates a new author record
